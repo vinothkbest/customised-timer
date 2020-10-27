@@ -1,0 +1,36 @@
+//timer code
+var h = '00';
+var m = 59;
+var s = 60;
+
+	
+function timer(){
+	if($('img').attr('src')){
+		if(s<=60 && s >0){
+		s=s-1;
+		window.setTimeout(timer,1000);
+			if(s<10){
+				if(m >=10){
+					document.getElementById('time').innerHTML = h+':'+m+':'+'0'+s;
+				}
+				else {
+					document.getElementById('time').innerHTML = h+':'+'0'+m+':'+'0'+s;
+					}
+			}	
+			else{document.getElementById('time').innerHTML = h+':'+ m +':'+s;}
+			}
+
+		else {
+			if (m<60 && m>00){
+			window.clearTimeout(timer,0); 
+			s= 61;
+			s = s-1;
+			window.setTimeout(timer,0);
+			m = m-1;
+			}
+			else{
+				window.clearTimeout(timer,0);
+				
+			}
+	}	}
+}
